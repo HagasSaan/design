@@ -17,5 +17,7 @@ function drawChart9(data, elementId) {
     }
   }
 
-  d3.select(elementId).text(maxSubscribersInfo.ChannelName);
+  d3.select(elementId).text(
+    "Channel name with the most subscribers: " + maxSubscribersInfo.ChannelName,
+  );
 }

@@ -22,6 +22,7 @@ function drawChart4(data, elementId) {
     .text("Top 5 YouTube Channels");
 
   var youtubers = data.columns.slice(1);
+  console.log("youtubers", youtubers);
 
   // List of groups = species here = value of the first column called group -> I show them on the X axis
   var years = d3
@@ -29,6 +30,7 @@ function drawChart4(data, elementId) {
       return d.Year;
     })
     .keys();
+  console.log("years", years);
 
   // Add X axis
   var x = d3.scaleBand().domain(years).range([0, width]).padding([0.1]);
@@ -102,7 +104,7 @@ function drawChart4(data, elementId) {
     .enter()
     .append("g")
     .attr("class", "legend-item")
-    .attr("transform", (d, i) => "translate(" + i * legendItemWidth + ", 10)"); 
+    .attr("transform", (d, i) => "translate(" + i * legendItemWidth + ", 10)");
 
   legend
     .selectAll(".legend-item")
