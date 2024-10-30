@@ -222,9 +222,9 @@
           >
             <h3>Data Visualization</h3>
             <div>
-              <script src="charts/chart1.js"></script>
-              <script src="charts/chart2.js"></script>
-              <script src="charts/chart4.js"></script>
+              <script src="charts/chart1_hardcode.js"></script>
+              <script src="charts/chart2_hardcode.js"></script>
+              <script src="charts/chart4_hardcode.js"></script>
               <!-- <script src="charts/chart9.js"></script> -->
               <div id="chart1" class="svgChart"></div>
               <div id="chart2" class="svgChart"></div>
@@ -232,12 +232,12 @@
               <!-- <div id="chart9" class="svgChart"></div> -->
               <script>
                 function drawChartsForTop100Youtubers(data) {
-                  drawChart1(data, "#chart1");
-                  drawChart2(data, "#chart2");
+                  drawChart1("#chart1");
+                  drawChart2("#chart2");
                 }
 
                 function drawChartsForAvgViewEveryYear(data) {
-                  drawChart4(data, "#chart4");
+                  drawChart4("#chart4");
                 }
 
                 // drawChart1("#chart1");
