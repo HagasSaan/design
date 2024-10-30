@@ -1,12 +1,12 @@
 function drawChart2(data, elementId) {
   var likesAndSubscribes = [];
-  var categoriesSet = new Set(); 
+  var categoriesSet = new Set();
 
   for (let i = 0; i < data.length; i++) {
     likesAndSubscribes.push({
       likes: data[i].Likes,
       subscribers: data[i].followers,
-      category: data[i].Category, 
+      category: data[i].Category,
     });
     categoriesSet.add(data[i].Category);
   }
@@ -16,7 +16,7 @@ function drawChart2(data, elementId) {
   var width = 700 - margin.left - margin.right;
   var height = 500 - margin.top - margin.bottom;
 
-  // Create SVG element
+  // svg
   var svg = d3
     .select(elementId)
     .append("svg")
@@ -34,7 +34,7 @@ function drawChart2(data, elementId) {
     .style("font-weight", "bold")
     .text("Likes and Subscribers");
 
-  // Add X axis (subscribers)
+  // X
   var x = d3.scaleLinear().domain([30000000, 100000000]).range([0, width]);
   svg
     .append("g")
@@ -48,7 +48,7 @@ function drawChart2(data, elementId) {
 
   var color = d3
     .scaleOrdinal()
-    .domain(categories) 
+    .domain(categories)
     .range([
       "#CC3B4A",
       "#ED7B86",
@@ -61,7 +61,7 @@ function drawChart2(data, elementId) {
       "#FFBD59",
     ]);
 
-  // Add Y axis (likes)
+  // Y
   var y = d3.scaleLinear().domain([0, 1000000000]).range([height, 0]).nice();
   svg.append("g").call(d3.axisLeft(y).ticks(7)).select(".domain").remove();
 
@@ -72,7 +72,7 @@ function drawChart2(data, elementId) {
     .attr("y", height + margin.bottom - 10)
     .text("Subscribers");
 
-  // Y axis label:
+  // Y label
   svg
     .append("text")
     .attr("text-anchor", "end")
@@ -81,7 +81,7 @@ function drawChart2(data, elementId) {
     .attr("x", -height / 2)
     .text("Likes");
 
-  svg
+  var circles = svg
     .append("g")
     .selectAll("dot")
     .data(likesAndSubscribes)
@@ -95,6 +95,36 @@ function drawChart2(data, elementId) {
     })
     .attr("r", 2)
     .attr("fill", (d) => {
-      return color(d.category); 
+      return color(d.category);
     });
+
+  var brush = d3
+    .brushX()
+    .extent([
+      [0, 0],
+      [width, height],
+    ])
+    .on("end", function(event) { 
+      brushed(event);
+    });
+
+  svg.append("g").attr("class", "brush").call(brush);
+
+  function brushed() {
+    const selection = d3.event.selection; 
+    if (!selection) return; 
+    const [x0, x1] = selection;
+
+    console.log(`x0: ${x0}, x1: ${x1}`);
+
+    circles
+      .attr("fill", (d) => {
+        const isSelected = x(d.subscribers) >= x0 && x(d.subscribers) <= x1;
+        return isSelected ? "orange" : color(d.category);
+      })
+      .attr("stroke", (d) => {
+        const isSelected = x(d.subscribers) >= x0 && x(d.subscribers) <= x1;
+        return isSelected ? "black" : "none"; 
+      });
+  }
 }

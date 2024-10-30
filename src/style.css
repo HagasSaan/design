@@ -1,5 +1,5 @@
 body {
-    font-family: "Baloo Da 2";
+    font-family: "Playpen Sans";
     display: flex;
     height: 100vh;
     margin: 0;
@@ -76,7 +76,7 @@ body {
 /* Typography section */
 .heading-typography,
 .content-typography {
-    font-family: "Baloo Da 2";
+    font-family: "Playpen Sans";
 }
 
 .data-typography {
@@ -103,17 +103,17 @@ body {
 .title {
     color: #fcbe5b;
     padding-left: 80px;
-    font-family: "Baloo Da 2";
+    font-family: "Playpen Sans";
     font-weight: bold;
 }
 
 .tab {
-    font-family: "Baloo Da 2";
+    font-family: "Playpen Sans";
 }
 
 .tab a {
     color: #333 !important;
-    font-family: "Baloo Da 2";
+    font-family: "Playpen Sans";
 }
 
 .tabs .tab a:hover {
@@ -139,7 +139,7 @@ body {
 }
 
 h3 {
-    font-family: "Baloo Da 2";
+    font-family: "Playpen Sans";
     font-weight: bold;
 }
 
@@ -333,6 +333,10 @@ h3 {
     border-radius: 25px;
 }
 
+.brush .selection {
+    fill: rgba(255, 165, 0, 0.5); 
+  }
+
 .svgDashboard {
 }
 
@@ -358,4 +362,178 @@ h3 {
     background-color: #ffffff;
     color: #333;
     display: initial;
+}
+
+/* Основной заголовок */
+#test5 h3 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Стили для состояния кнопок */
+.state-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.state-buttons .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.state-buttons h5 {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+.state-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffa500;
+    border-radius: 8px;
+    transition:
+        background-color 0.3s,
+        transform 0.1s;
+    text-align: center;
+}
+
+.state.default {
+    background-color: #ffa500;
+    color: #fff;
+}
+
+.state.disabled {
+    background-color: #b0b0b0;
+    color: #fff;
+}
+
+.state.hover:hover {
+    background-color: #FFD071;
+    transform: scale(1.1);
+}
+
+.state.pressed:active {
+    background-color: #774902;
+    transform: scale(0.95);
+}
+
+.btn.outline:hover {
+    background-color: #ffa500; 
+    color: #ffa500; 
+}
+
+
+/* Центрирование текста и иконки в кнопках */
+.btn i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+/* Стили для Other */
+.other-buttons h4 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.other-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn.outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize; /* делает первую букву каждого слова заглавной */
+    font-family: "Manrope", sans-serif; /* Добавлен единый шрифт */
+}
+
+.btn.outline i.material-icons {
+    font-size: 18px;
+}
+
+.btn.outline:hover {
+    background-color: #f9f9f9;
+}
+
+.expanded-field {
+    position: relative;
+    display: flex;
+    width: 260px;
+    height: 140px;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    font-family: "Manrope", sans-serif; /* Единый шрифт для expanded-field */
+    margin-left: 537px;
+}
+
+.expanded-field .typing-text {
+    position: absolute;
+    top: 10px; /* Отступ сверху */
+    left: 10px; /* Отступ слева */
+    margin: 0; /* Убираем дополнительные отступы */
+}
+
+.expanded-field .arrow {
+    position: absolute;
+    top: 10px; /* Отступ сверху */
+    right: 10px; /* Отступ справа */
+    font-size: 18px;
+}
+
+/* Стили для чекбоксов */
+.checkbox-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox-section p {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.material-icons.green-text {
+    color: green;
+}
+
+.material-icons.red-text {
+    color: red;
+}
+
+.material-icons {
+    font-size: 18px;
+    vertical-align: middle;
 }
