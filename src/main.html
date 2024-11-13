@@ -224,24 +224,38 @@
             <div>
               <script src="charts/chart1.js"></script>
               <script src="charts/chart2.js"></script>
+              <script src="charts/chart3.js"></script>
               <script src="charts/chart4.js"></script>
-              <!-- <script src="charts/chart9.js"></script> -->
+              <script src="charts/chart5.js"></script>
+              <script src="charts/chart6.js"></script>
+              <script src="charts/chart7.js"></script>
+              <script src="charts/chart8.js"></script>
+              <script src="charts/chart9.js"></script>
               <div id="chart1" class="svgChart"></div>
               <div id="chart2" class="svgChart"></div>
+              <div id="chart3" class="svgChart"></div>
               <div id="chart4" class="svgChart"></div>
-              <!-- <div id="chart9" class="svgChart"></div> -->
+              <div id="chart5" class="svgChart"></div>
+              <div id="chart6" class="svgChart"></div>
+              <div id="chart7" class="svgChart"></div>
+              <div id="chart8" class="svgChart"></div>
+              <div id="chart9" class="svgChart"></div>
               <script>
                 function drawChartsForTop100Youtubers(data) {
                   drawChart1(data, "#chart1");
                   drawChart2(data, "#chart2");
+                  drawChart3(data, "#chart3");
+                  drawChart5(data, "#chart5");
+                  drawChart6(data, "#chart6");
+                  drawChart7(data, "#chart7");
+                  drawChart8(data, "#chart8");
+                  drawChart9(data, "#chart9");
                 }
 
                 function drawChartsForAvgViewEveryYear(data) {
                   drawChart4(data, "#chart4");
                 }
 
-                // drawChart1("#chart1");
-                // drawChart9("#chart9");
                 d3.csv(
                   "data/top_100_youtubers.csv",
                   drawChartsForTop100Youtubers
