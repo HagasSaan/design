@@ -45,7 +45,7 @@
             height: 100%;
             margin-left: 10%;
         }
-        .image img { 
+        .image img {
             height: 100%;
             width: 100%;
         }
@@ -70,7 +70,7 @@
         }
         .tab {
             font-family: "Playpen Sans";
-            
+
         }
         .tab a {
             color: #333 !important;
@@ -101,14 +101,14 @@
             width: 50%;
             height: 210vh;
         }
-        .chart1 {
+        .chart1, .chart4 {
             border: 1px solid #336699;
             border-radius: 25px;
             height: 30%;
             width: 95%;
             margin-left: 3%;
         }
-        .chart2 {
+        .chart2, .chart5 {
             border: 1px solid #336699;
             border-radius: 25px;
             height: 30%;
@@ -116,7 +116,7 @@
             margin-left: 3%;
             margin-top: 70px;
         }
-        .chart3 {
+        .chart3, .chart6 {
             border: 1px solid #336699;
             border-radius: 25px;
             height: 30%;
@@ -152,6 +152,9 @@
             width: 30%;
             margin-top: 20px;
             margin-left: 41px;
+        }
+        .test {
+            display: inline;
         }
     </style>
 </head>
@@ -201,13 +204,13 @@
                 </div>
             </div>
             <div class="box2">
-                <div class="chart1">
+                <div class="chart4">
                     <script src="charts/chart4.js"></script>
                 </div>
-                <div class="chart2">
+                <div class="chart5">
                     <script src="charts/chart5.js"></script>
                 </div>
-                <div class="chart3">
+                <div class="chart6">
                     <script src="charts/chart6.js"></script>
                 </div>
             </div>
@@ -225,6 +228,26 @@
                 <script src="charts/chart9.js"></script>
             </div>
         </div>
+
+        <script>
+          function drawChartsForTop100Youtubers(data) {
+            drawChart1(data, ".chart1");
+            drawChart2(data, ".chart2");
+            drawChart3(data, ".chart3");
+            drawChart5(data, ".chart5");
+            drawChart6(data, ".chart6");
+            drawChart7(data, ".chart7");
+            drawChart8(data, ".chart8");
+            drawChart9(data, ".chart9");
+          }
+
+          function drawChartsForAvgViewEveryYear(data) {
+            drawChart4(data, ".chart4");
+          }
+
+          d3.csv("data/top_100_youtubers.csv", drawChartsForTop100Youtubers);
+          d3.csv("data/avg_view_every_year.csv", drawChartsForAvgViewEveryYear);
+        </script>
     </div>
 </body>
 </html>
