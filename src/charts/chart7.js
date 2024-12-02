@@ -26,5 +26,7 @@ function drawChart7(data, elementId) {
     }
   }
 
-  d3.select(elementId).text(topCategoryByFollowers);
+  d3.select(elementId).text(
+    "The category that has most followers: " + topCategoryByFollowers,
+  );
 }

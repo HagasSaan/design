@@ -26,5 +26,8 @@ function drawChart8(data, elementId) {
     }
   }
 
-  d3.select(elementId).text(top100YoutubersCountry);
+  d3.select(elementId).text(
+    "The country that has the most youtubers in the top 100 list: " +
+      top100YoutubersCountry,
+  );
 }

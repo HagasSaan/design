@@ -66,12 +66,12 @@ function drawChart2(data, elementId) {
   var y = d3.scaleLinear().domain([0, 1000000000]).range([height, 0]).nice();
 
   svg
-  .append("g")
-  .call(d3.axisLeft(y).ticks(7))
-  .selectAll("text")
-  .attr("transform", "translate(-10,0)rotate(0)")
-  .style("text-anchor", "end")
-  .style("fill", "grey"); 
+    .append("g")
+    .call(d3.axisLeft(y).ticks(7))
+    .selectAll("text")
+    .attr("transform", "translate(-10,0)rotate(0)")
+    .style("text-anchor", "end")
+    .style("fill", "grey");
 
   svg
     .append("text")
@@ -85,7 +85,7 @@ function drawChart2(data, elementId) {
     .append("text")
     .attr("text-anchor", "end")
     .attr("transform", "rotate(-90)")
-    .attr("y", -margin.left + 40)
+    .attr("y", -margin.left + 30)
     .attr("x", -height / 2)
     .text("Likes");
 
@@ -112,15 +112,15 @@ function drawChart2(data, elementId) {
       [0, 0],
       [width, height],
     ])
-    .on("end", function(event) { 
+    .on("end", function (event) {
       brushed(event);
     });
 
   svg.append("g").attr("class", "brush").call(brush);
 
   function brushed() {
-    const selection = d3.event.selection; 
-    if (!selection) return; 
+    const selection = d3.event.selection;
+    if (!selection) return;
     const [x0, x1] = selection;
 
     console.log(`x0: ${x0}, x1: ${x1}`);
@@ -132,7 +132,7 @@ function drawChart2(data, elementId) {
       })
       .attr("stroke", (d) => {
         const isSelected = x(d.subscribers) >= x0 && x(d.subscribers) <= x1;
-        return isSelected ? "black" : "none"; 
+        return isSelected ? "black" : "none";
       });
   }
 }
