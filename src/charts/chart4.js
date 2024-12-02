@@ -37,11 +37,20 @@ function drawChart4(data, elementId) {
   svg
     .append("g")
     .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).tickSize(0));
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll("text")
+    .attr("transform", "translate(10,0)rotate(0)")
+    .style("text-anchor", "end")
+    .style("fill", "grey");
 
   // Add Y axis
   var y = d3.scaleLinear().domain([0, 60000000]).range([height, 0]);
-  svg.append("g").call(d3.axisLeft(y));
+  svg.append("g")
+    .call(d3.axisLeft(y))
+    .selectAll("text")
+    .attr("transform", "translate(-10,0)rotate(0)")
+    .style("text-anchor", "end")
+    .style("fill", "grey");
 
   // Another scale for subgroup position?
   var xYoutubers = d3

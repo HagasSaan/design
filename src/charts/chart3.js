@@ -52,11 +52,17 @@ function drawChart3(data, elementId) {
     .call(d3.axisBottom(x))
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
+    .style("fill", "grey")
     .style("text-anchor", "end");
 
   // Add Y axis
-  var y = d3.scaleLinear().domain([0, 50]).range([height, 0]);
-  svg.append("g").call(d3.axisLeft(y));
+  var y = d3.scaleLinear().domain([0, 45]).range([height, 0]);
+  svg.append("g")
+    .call(d3.axisLeft(y))
+    .selectAll("text")
+    .attr("transform", "translate(-10,0)rotate(0)")
+    .style("text-anchor", "end")
+    .style("fill", "grey");
 
   svg
     .selectAll("mybar")

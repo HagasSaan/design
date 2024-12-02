@@ -45,11 +45,18 @@ function drawChart5(data, elementId) {
     .call(d3.axisBottom(x).tickSize(0))
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
+    .style("fill", "grey")
     .style("text-anchor", "end");
 
   // Add Y axis
   var y = d3.scaleBand().domain(groups).range([height, 0]).padding(0.20);
-  svg.append("g").call(d3.axisLeft(y));
+  svg
+  .append("g")
+  .call(d3.axisLeft(y))
+  .selectAll("text")
+  .attr("transform", "translate(-1,0)rotate(0)") 
+  .style("text-anchor", "end")
+  .style("fill", "grey");
 
   // Another scale for subgroup position?
   var ySubgroup = d3

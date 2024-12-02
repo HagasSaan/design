@@ -1,6 +1,7 @@
 function drawChart6(data, elementId, country = "IN") {
   // Chart6: The number of YouTube channels by category
   var countries = getCountries(data);
+
   var dropdownButton = d3
     .select(elementId)
     .append("select")
@@ -19,6 +20,8 @@ function drawChart6(data, elementId, country = "IN") {
     })
     .style("text-align", "center");
 
+  
+
   var margin = { top: 60, right: 10, bottom: 70, left: 100 };
   var width = 700 - margin.left - margin.right;
   var height = 500 - margin.top - margin.bottom;
@@ -31,13 +34,14 @@ function drawChart6(data, elementId, country = "IN") {
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  var x = d3.scaleLinear().domain([0, 50]).range([0, width]);
+  var x = d3.scaleLinear().domain([0, 20]).range([0, width]);
   svg
     .append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x))
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
+    .style("fill", "grey")
     .style("text-anchor", "end");
 
   // Add Y axis
@@ -51,7 +55,10 @@ function drawChart6(data, elementId, country = "IN") {
     )
     .padding(0.2);
 
-  svg.append("g").call(d3.axisLeft(y));
+  svg.append("g").call(d3.axisLeft(y)).selectAll("text")
+  .attr("transform", "translate(-2,0)rotate(0)") 
+  .style("text-anchor", "end")
+  .style("fill", "grey");
 
   dropdownButton.on("change", function (d) {
     var selectedOption = d3.select(this).property("value");

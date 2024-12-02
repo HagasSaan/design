@@ -1,9 +1,7 @@
+html,
 body {
-    font-family: "Playpen Sans";
-    display: flex;
-    height: 100vh;
     margin: 0;
-    background-color: #fafafa;
+    padding: 0;
 }
 
 .wrapper {
@@ -15,7 +13,10 @@ body {
     height: auto;
     white-space: normal;
     background-color: #fafafa;
+    display: flex;
+    justify-content: center;
 }
+
 .sidebar {
     background-color: #fcbe5b;
     width: 250px;
@@ -187,54 +188,69 @@ h3 {
     line-height: 1.5;
     padding: 5px;
 }
+
 .black {
     background-color: #252323;
 }
+
 .dark-grey {
     background-color: #605a53;
 }
+
 .grey {
     background-color: #aaa7a0;
     color: #000000;
 }
+
 .white {
     background-color: #f9f9f7;
     color: #000000;
 }
+
 .dark-choco {
     background-color: #252323;
 }
+
 .pale-yellow {
     background-color: #f1b963;
     color: #000000;
 }
+
 .choco {
     background-color: #774902;
 }
+
 .mustard {
     background-color: #ffbd59;
     color: #000000;
 }
+
 .scarlet {
     background-color: #cc3b4a;
 }
+
 .soft-red {
     background-color: #ed7b86;
 }
+
 .green {
     background-color: #28ae45;
 }
+
 .grass {
     background-color: #5cb56f;
 }
+
 .yellow {
     background-color: #f7a62b;
     color: #000000;
 }
+
 .cheese {
     background-color: #ffd071;
     color: #000000;
 }
+
 .orange {
     background-color: #ffd071;
     color: #000000;
@@ -245,12 +261,14 @@ h3 {
     padding: 20px;
     background-color: #f0f0f0;
 }
+
 .columns {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 48px;
 }
+
 .column {
     flex: 1;
     margin: 5px;
@@ -260,14 +278,17 @@ h3 {
     height: 100px;
     width: 20px;
 }
+
 .info {
     margin: 20px 0;
 }
+
 .layoutRow {
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
 }
+
 .grid-marker {
     width: 48px;
     height: 48px;
@@ -276,6 +297,7 @@ h3 {
     line-height: 48px;
     margin: 2px;
 }
+
 .gutter {
     background-color: #999;
     width: 20px;
@@ -296,10 +318,12 @@ h3 {
     align-items: center;
     margin-bottom: 20px;
 }
+
 .icon {
     font-size: 24px;
     margin-right: 10px;
 }
+
 .section-title {
     font-size: 18px;
     font-weight: bold;
@@ -334,30 +358,23 @@ h3 {
 }
 
 .brush .selection {
-    fill: rgba(255, 165, 0, 0.5); 
-  }
-
-.svgDashboard {
+    fill: rgba(255, 165, 0, 0.5);
 }
 
-/* #chart6 select {
-  text-align: center;
-  width: 100%;
-  padding: 10px;
-  background-color: #fffdc4;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-} */
 
 .test {
-    padding: 10px;
     font-size: 16px;
     background-color: #ffbd59;
     border: 1px solid #ccc;
     border-radius: 5px;
     color: #333;
-    display: initial;
+    font-weight: bold;
+    width: 140px;
+    margin-left: 3vw;
+    margin-top: 10px;
+    display: flex;
 }
+
 .test option {
     background-color: #ffffff;
     color: #333;
@@ -430,8 +447,8 @@ h3 {
 }
 
 .btn.outline:hover {
-    background-color: #ffa500; 
-    color: #ffa500; 
+    background-color: #ffa500;
+    color: #ffa500;
 }
 
 
@@ -468,8 +485,10 @@ h3 {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    text-transform: capitalize; /* делает первую букву каждого слова заглавной */
-    font-family: "Manrope", sans-serif; /* Добавлен единый шрифт */
+    text-transform: capitalize;
+    /* делает первую букву каждого слова заглавной */
+    font-family: "Manrope", sans-serif;
+    /* Добавлен единый шрифт */
 }
 
 .btn.outline i.material-icons {
@@ -492,21 +511,27 @@ h3 {
     font-size: 14px;
     font-weight: bold;
     color: #333;
-    font-family: "Manrope", sans-serif; /* Единый шрифт для expanded-field */
+    font-family: "Manrope", sans-serif;
+    /* Единый шрифт для expanded-field */
     margin-left: 537px;
 }
 
 .expanded-field .typing-text {
     position: absolute;
-    top: 10px; /* Отступ сверху */
-    left: 10px; /* Отступ слева */
-    margin: 0; /* Убираем дополнительные отступы */
+    top: 10px;
+    /* Отступ сверху */
+    left: 10px;
+    /* Отступ слева */
+    margin: 0;
+    /* Убираем дополнительные отступы */
 }
 
 .expanded-field .arrow {
     position: absolute;
-    top: 10px; /* Отступ сверху */
-    right: 10px; /* Отступ справа */
+    top: 10px;
+    /* Отступ сверху */
+    right: 10px;
+    /* Отступ справа */
     font-size: 18px;
 }
 

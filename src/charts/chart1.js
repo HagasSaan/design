@@ -32,7 +32,8 @@ function drawChart1(data, elementId) {
     .attr("y", -20)
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
-    .text("Top 100 YouTube Channels by Category");
+    .text("Top 100 YouTube Channels by Category")
+    .style("font-weight", "bold");
 
   // Add X axis
   var x = d3.scaleLinear().domain([0, 45]).range([0, width]);
@@ -42,16 +43,24 @@ function drawChart1(data, elementId) {
     .call(d3.axisBottom(x))
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
-    .style("text-anchor", "end");
+    .style("text-anchor", "end")
+    .style("fill", "grey");  
 
   // Add Y axis
   var y = d3
     .scaleBand()
     .range([0, height])
     .domain(channelsPerCategory.map((d) => d.Category))
-    .padding(0.2);
+    .padding(0.1)
 
-  svg.append("g").call(d3.axisLeft(y));
+    svg.append("g")
+    .call(d3.axisLeft(y))
+    .selectAll("text")
+    .attr("transform", "translate(-10,0)rotate(0)") 
+    .style("text-anchor", "end") 
+    .style("fill", "grey"); 
+
+  // svg.append("g").call(d3.axisLeft(y));
 
   var color = d3
     .scaleOrdinal()
